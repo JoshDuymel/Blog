@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='numberGuesser.css' />
+    <link rel='stylesheet' href='main.css' />
+    <title>The Guessing Game</title>
+    <script src='numberGuesser.js'></script>
+</head>
+<body>
+
+		<div id="game">
+			<h1>Number Guessing Game</h1>
+			<div id="statusArea">
+				<p>Enter a number between 1-100 then click the button...</p>
+			</div>
+			<input type="number" id="userGuess"/>
+			<div id="buttonArea" class="button">
+				Guess
+			</div>
+			<div id="historyArea">
+				<h2>Your Previous Guesses</h2>
+				<ol id="historyList">
+				</ol>
+			</div>
+      <button class="button" onclick=newGame() id="resetButton">Reset Game</button>
+		</div>
+
+    <div class='rightMargin'>
+      <a class='sideLinks' href='main.html'>THE HOME PAGE</a>
+      <br>
+      <a class='sideLinks' href='reflections.html'>THE REFLECTIONS PAGE</a>
+    </div>
+
+</body>
+</html>
