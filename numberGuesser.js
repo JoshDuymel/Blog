@@ -22,6 +22,9 @@ function guessInRange(guess) {
 }
 
 function userGuessed() {
+
+	let gap = Math.abs(userGuessed - secretNumber);
+
 	var userGuessed = document.getElementById('userGuess').value;
 	if (userGuessed.length == 0 || ! guessInRange(userGuessed)) {
 
@@ -31,35 +34,35 @@ function userGuessed() {
 	} else {
 		numberOfGuesses++;
 
-    if ((userGuessed < (secretNumber-50)) || (userGuessed > (secretNumber+50))) {
+    if (gap > 50) {
 			writeMessage('statusArea', '<p>You\'re frozen! Your guess of ' + userGuessed + ' was more than 50 away! Try again...</p>');
 			writeMessage('historyList', '<li>' + userGuessed +'...frozen</li>', true);
 		}
-    else if ((userGuessed < (secretNumber-40)) || (userGuessed > (secretNumber+40))) {
+    else if (gap > 40) {
 			writeMessage('statusArea', '<p>You\'re freezing! Your guess of ' + userGuessed + ' was more than 40 away! Try again...</p>');
 			writeMessage('historyList', '<li>' + userGuessed +'...freezing</li>', true);
 		}
-    else if ((userGuessed < (secretNumber-30)) || (userGuessed > (secretNumber+30))) {
+    else if (gap > 30) {
 			writeMessage('statusArea', '<p>You\'re cold! Your guess of ' + userGuessed + ' was more than 30 away! Try again...</p>');
 			writeMessage('historyList', '<li>' + userGuessed +'...cold</li>', true);
 		}
-    else if ((userGuessed < (secretNumber-20)) || (userGuessed > (secretNumber+20))) {
+    else if (gap > 20) {
 			writeMessage('statusArea', '<p>You\'re chilly! Your guess of ' + userGuessed + ' was more than 20 away! Try again...</p>');
 			writeMessage('historyList', '<li>' + userGuessed +' chilly!</li>', true);
 		}
-    else if ((userGuessed < (secretNumber-10)) || (userGuessed > (secretNumber+10))) {
+    else if (gap > 10) {
 			writeMessage('statusArea', '<p>You\'re warm! Your guess of ' + userGuessed + ' was more than 10 away! Try again...</p>');
 			writeMessage('historyList', '<li>' + userGuessed +' warm...</li>', true);
 		}
-    else if ((userGuessed < (secretNumber-5)) || (userGuessed > (secretNumber+5))) {
+    else if (gap > 5) {
 			writeMessage('statusArea', '<p>You\'re hot! ;) Your guess of ' + userGuessed + ' was more than 5 away! Try again...</p>');
 			writeMessage('historyList', '<li>' + userGuessed +' hot!</li>', true);
 		}
-    else if ((userGuessed < (secretNumber-2)) || (userGuessed > (secretNumber+2))) {
+    else if (gap > 2) {
 			writeMessage('statusArea', '<p>You\'re roastin\'! ;D Your guess of ' + userGuessed + ' was more than 2 away! Try again...</p>');
-			writeMessage('historyList', '<li>' + userGuessed +' you\'re roatin\'!</li>', true);
+			writeMessage('historyList', '<li>' + userGuessed +' you\'re roastin\'!</li>', true);
 		}
-    else if ((userGuessed <= (secretNumber-1)) || (userGuessed >= (secretNumber+1))) {
+    else if (gap => 1) {
 			writeMessage('statusArea', '<p>You\'re on fire! :O Your guess of ' + userGuessed + ' was more than 1 away! Try again...</p>');
 			writeMessage('historyList', '<li>' + userGuessed +' wew, you\'re on fire!</li>', true);
 		}
